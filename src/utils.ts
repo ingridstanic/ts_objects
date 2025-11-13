@@ -12,12 +12,13 @@ export const createHtmlForTopGames = (myTopGames: FavGames[]) => {
     const rating = document.createElement("p");
     const hours = document.createElement("p");
 
+    card.className = "gameCard";
     title.innerHTML = game.title;
     dev.innerHTML = game.developer;
     year.innerHTML = game.realeaseYear;
     genre.innerHTML = game.genre;
-    rating.innerHTML = game.myRating;
-    hours.innerHTML = game.hoursPlayed;
+    rating.innerHTML = "My rating: " + game.myRating;
+    hours.innerHTML = "Hours played: " + game.hoursPlayed;
 
     card.appendChild(title);
     card.appendChild(dev);
@@ -35,7 +36,7 @@ export const createHTMLHeader = () => {
     const h1 = document.createElement("h1");
 
     h1.className = "myHeader";
-    h1.innerHTML = "TopToGame+";
+    h1.innerHTML = "TopGame+";
 
     document.body.prepend(header);
     header.appendChild(h1);
